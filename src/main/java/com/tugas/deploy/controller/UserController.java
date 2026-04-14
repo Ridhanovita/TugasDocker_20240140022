@@ -39,7 +39,7 @@ public class UserController {
     @GetMapping("/form")
     public String formPage(Model model){
         model.addAttribute("user", new User());
-        return "home";
+        return "form";
     }
 
     @PostMapping("/form")
