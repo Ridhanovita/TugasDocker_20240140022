@@ -35,4 +35,16 @@ public class UserController {
         model.addAttribute("users", userList);
         return "home";
     }
+
+    @GetMapping("/form")
+    public String formPage(Model model){
+        model.addAttribute("user", new User());
+        return "home";
+    }
+
+    @PostMapping("/form")
+    public String formPage(@ModelAttribute User user){
+        userList.add(user);
+        return "redirect:/home";
+    }
 }
